@@ -13,7 +13,7 @@ conda install pytorch torchvision cudatoolkit=11.1 -c pytorch-lts -c nvidia
 
 ## Run HIBMatch
 
-Please use the script `submit_train_HGIB_gpu` to submit a Condor job to train the HIBMatch model. Alternatively, run the following command
+Please use the script `submit_train_HGIB_gpu` to submit a Slurm job to train the HIBMatch model. Alternatively, run the following command
 ```python
 python train_ssl_cross_val.py --gpu_ids 0, --lr 0.001 --name HGIB/CV1 --netD fc --focal --model HGIB_semi_unlabeled_consistency_ema --label_time m24 --onefc --control MCI --K_neigs 20 --continue_train --load_weight non_image/complete-modality-info10 --niter 0 --niter_decay 2000  --beta 10 --split 10 --num_graph_update 100 --save_latest_freq 100 --save_epoch_freq 400 --weight_u 0.1 --use_strong_aug --train_encoders --fold 4
 ```
@@ -60,3 +60,4 @@ Please note that the images in `train_split10.pkl` and `test_split10.pkl` (pleas
   keywords={Feature extraction;Magnetic resonance imaging;Alzheimer's disease;Data mining;Data models;Perturbation methods;Diffusion tensor imaging;Vectors;Three-dimensional displays;Prognostics and health management;Alzheimer's disease;progression prediction;hypergraph information bottleneck;multimodal data;consistency regularisation},
   doi={10.1109/JBHI.2025.3634534}}
 ```
+
